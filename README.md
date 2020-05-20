@@ -11,6 +11,21 @@ npm i vuexess
 yarn add vuexess
 ```
 
+```js
+// main.js
+import Vue from 'vue';
+import Vuexess from 'vuexess';
+import App from './App.vue';
+import store from './store';
+
+Vue.use(Vuexess, { store });
+
+new Vue({
+  store,
+  render: h => h(App),
+}).$mount('#app');
+```
+
 
 ## Usage
 
@@ -55,6 +70,52 @@ export default {
 |mutations|array|rootMutations of vuex|
 |actions|array|rootActions of vuex|
 |moduleName|object|modules registered in vuex|
+
+
+## Optional API
+
+There's two optional API that you can use to customize your own functions to use.
+
+1. useStore()
+
+This will get the store instance in the Vue app. Since the store will be provided after store init, If you use this before `Vue.use(Vuexess, { store })`, It's still `null`
+
+```js
+// some module
+import { useStore } from 'vuexess';
+
+// Since the store is not yet provided, always use a function to get the store content
+export const nowModal = () => useStore().state.Modal.name;
+```
+
+2. access(actionKey, modulePath)
+
+  - **actionKey**
+    
+    Action method's key in target module.
+
+  - **modulePath**
+
+    Target module path, if it's root, then no need for this modulePath
+
+```js
+// custom JS module
+import { access } from 'vuexess';
+
+// Game Module
+export const getProfile = access('getProfile', 'Game');
+
+
+// Modal module
+export const updateModal = access('updateModal', 'Modal');
+
+export const closeModal = access('closeModal', 'Modal');
+
+
+// Game => Test module
+export const someTest = access('someTest', 'Game/Test');
+```
+
 
 
 ## License
