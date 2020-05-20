@@ -1,0 +1,13 @@
+{
+  "name": "vuexess",
+  "version": "1.0.0",
+  "description": "A Vuex access library, which enable easy way to import vuex module between your files",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": ["vue", "vuex"],
+  "author": "johnnywang",
+  "license": "ISC",
+  "repository": "https://git.garena.com/harbor.seacloud.garenanow.com/garenatwdev/vue-gop-authenticate"
+}
