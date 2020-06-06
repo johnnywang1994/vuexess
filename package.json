@@ -1,6 +1,6 @@
 {
   "name": "vuexess",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Vuex access library, which enable easy way to import vuex module between your files",
   "main": "index.js",
   "directories": {
