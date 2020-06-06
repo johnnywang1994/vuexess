@@ -10,6 +10,13 @@
     "vue",
     "vuex"
   ],
+  "files": [
+    "/lib",
+    "/package.json",
+    "/index.js",
+    "/README.md",
+    "/LICENSE"
+  ],
   "author": "johnnywang",
   "license": "ISC",
   "repository": "https://github.com/johnnywang1994/vuexess"
